@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>admin page</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- EXTERNAL LIBRARIES --> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/dataTables.bootstrap5.min.css"> -->
+    <script src="./scripts/admin.js"></script>
+</head>
+
+<!-- BODY OF THE WEBSITE -->
+
+<body>
+
+<!-- NAVIGATION SECTION WITH LOGOS AND NAVIGATION BAR-->
+
+    <nav>
+        <div class="logo">
+            <img src="images/logos/3.png">
+            <p>HAVEN HEIGHTS CLINIC<br><span>MEDICAL CENTER</span></p>
+        </div>
+
+        <!-- NAVIGATION BAR -->
+
+        <div class="navigation_bar">
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#" id="logoutLink">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- MAIN CONTENT OF THE PAGE -->
+
+    <main id="main">
+        <div class="main_tag">
+            <h1>Welcome admin 'it-will-display-admin-name-here</h1>
+        </div>
+        <div id="services_box" class="services_box">
+            <a href="#" id="add/update_patient">
+                <div class="icon">
+                    <i class="fa-solid fa-person-circle-plus"></i>
+                </div>ADD Patient</a>
+            <a href="#" id="view/select_patient">
+                <div class="icon">
+                    <i class="fa-solid fa-clipboard"></i>
+                </div>Update Patient Details</a>
+        </div>
+
+        <!-- NEW PATIENT FORM -->
+        
+        <div id="form_box" class="form_box">
+            <form id="new_patient_form" class="new_patient_form" name="new_patient_form">
+            
+                <label for="NHS">NHS number: </label><br>
+                <input type="text" id="NHS" name="NHS" maxlength="10" autocomplete="off">
+                <br>
+            
+                <label for="title">Title: </label><br>
+                <input type="text" id="title" name="title" required autocomplete="off">
+                <br>
+            
+                <label for="name">Name: </label><br>
+                <input type="text" id="name" name="name" required autocomplete="off">
+                <br>
+            
+                <label for="surname">Surname: </label><br>
+                <input type="text" id="surname" name="surname" required autocomplete="off">
+                <br>
+
+                <label for="d_o_b">Date of birth: </label><br>
+                <input type="date" id="d_o_b" name="d_o_b" required autocomplete="off">
+                <br>
+
+                <label for="gender">Gender: </label><br>
+                <input type="text" id="gender" name="gender" required autocomplete="off">
+                <br>
+            
+                <label for="address">Address: </label><br>
+                <input type="text" id="address" name="address" required autocomplete="off">
+                <br>
+            
+                <label for="email">Email address: </label><br>
+                <input type="email" id="email" name="email" autocomplete="email">
+                <br>
+            
+                <label for="phone">Phone Nr: </label><br>
+                <input type="tel" id="phone" name="phone" required autocomplete="tel">
+                <br>
+
+                <label for="password">Password: </label><br>
+                <input type="password" id="password" minlength="8" name="password" required>
+                <br>
+            
+                <p>
+                    <button id="btnRegister">Register</button>
+                </p>
+                <p>
+                    <button id="btnClear">Reset</button>
+                </p>
+                <p>
+                    <button id="btnDelete">Delete</button>
+                </p>
+                <p>
+                    <button id="btnUpdate">Update</button>
+                </p>
+            </form>
+        </div>
+
+        <!-- RECORDS TABLE -->
+        <div id="table_box" class="table_box">
+            <button id="back_button" class="back_button">BACK</button>
+            <form id="search_bar" class="search_bar" name="search_bar">
+                <label for="search_bar_input">Search: </label>
+                <input type="search" id="search" name="search" required autocomplete="name">
+                <button class="btnSearch" id="btnSearch">Search</button>
+                <button id="btnShowAll">Show all</button>
+            </form>
+            <div class="container" id="container_1">
+                <table id="patient_table" class="patient_table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>NHS</th>
+                            <th>Title</th>
+                            <th>First</th>
+                            <th>Last</th>
+                            <th>DOB</th>
+                            <th>Gender</th>
+                            <th>Address</th>
+                            <th>Email</th>
+                            <th>Telephone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+<!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer_main"> 
+            <div class="left_footer_box">
+                <div class="tag">
+                    <h1>Site Map</h1>
+                    <a href="#Home">Home</a>
+                    <a href="home">Appointments</a>
+                    <a href="home">Register as a patient</a>
+                    <a href="home">Consultation Online</a>
+                    <a href="home">Update Cookie preferences</a>
+                </div>
+            </div>
+
+            <div class="center_footer_box">
+                <div class="tag">
+                    <h1>Out of hours cover</h1>
+                    <p>Our surgeries are closed from 6.30pm on weekdays,
+                    and all day at weekends and Bank Holidays except for limited extended hours. 
+                    If you need health advice when the surgery is shut please call NHS 111 
+                    who provide out of hours cover. 111 is the NHS non-emergency number. It’s fast, easy and free.<br><br>
+                    Call 111 and speak to a highly trained adviser. 
+                    They will ask you a series of questions to assess your symptoms and immediately 
+                    direct you to the best medical care for you.</p>
+                </div>
+            </div>
+            
+            <div class="right_footer_box">
+                <div class="tag">
+                    <h1>Contact Us</h1>
+                    <p>Haven Heights Clinic
+                        123 Elm Street
+                        London, NW1 1AB
+                        United Kingdom
+                    </p>
+                    <div class="social_links">
+                        <p><i class="fa-solid fa-phone"> 020 3241 2768</i></p>
+                        <!--<a href="phone"><i class="fa-solid fa-phone"></i> 020 3241 2768</a>-->
+                        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                        <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank"><i class="fa-regular fa-envelope"></i> haven.heights@gmail.com</a>
+                    </div>
+                </div>
+
+            </div>   
+        </div>                             
+    </footer>
+</body>

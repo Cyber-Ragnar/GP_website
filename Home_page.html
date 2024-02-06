@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>GP practice website</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!--outside css library for icons from fontawesome--> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+    <script src="./scripts/home_page.js"></script>
+</head>
+
+<body>
+
+<!-- NAVIGATION SECTION WITH LOGOS AND NAVIGATION BAR-->
+
+    <nav>
+        <div class="logo">
+            <img src="images/logos/3.png">
+            <p>HAVEN HEIGHTS CLINIC<br><span>MEDICAL CENTER</span></p>
+        </div>
+
+        <!-- OVERLAY FOR LOGIN/REGISTER FUNCTIONS -->
+        
+        <!-- LOGIN FORM EMBEDED INTO AN OVERLAY -->
+
+        <div id="login" class="overlay">
+            <a href="javascript:void(0)" class="close_button" onclick="closeLogin()">&times;</a>
+            <form id="login_form" class="overlay_content">
+                <label for="username">Username: </label>
+                <input type="email" id="username" name="username" autocomplete="email" required>
+                <br>
+                <label for="password">Password: </label>
+                <input type="password" id="password" name="password" minlength="8" autocomplete="current-password" required>
+                <br>
+                <input type="submit" value="Login">
+            </form>
+        </div>
+
+        <!-- REGISTER FORM EMBEDED INTO AN OVERLAY-->
+        <div id="register" class="overlay">
+            <a href="javascript:void(0)" class="close_button" onclick="closeRegister()">&times;</a>
+            <form id="register_form" class="overlay_content_2">
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name" autocomplete="name" required>
+                <br>
+                <label for="surname">Surname: </label>
+                <input type="text" id="surname" name="surname" autocomplete="family-name" required>
+                <br>
+                <label for="d_o_b">Date of birth: </label>
+                <input type="date" id="d_o_b" name="d_o_b" autocomplete="bday" required>
+                <br>
+                <label for="email">Email address: </label>
+                <input type="email" id="email" name="email" autocomplete="email" required>
+                <br>
+                <label for="password">Password: </label>
+                <input type="password" id="password" name="password" minlength="8" required>
+                <br>
+                <label for="password_2">Repeat password: </label>
+                <input type="password" id="password_2" name="password_2" minlength="8" required>
+                <br>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+
+        <!-- NAVIGATION BAR -->
+
+        <div class="navigation_bar">
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Login
+                        <i class="fa-solid fa-caret-down"></i>
+                    </a>
+                    <div class="drop_content">
+                        <a href="#" onclick="openLogin()">Login</a>
+                        <a href="#" onclick="openRegister()">Register</a>
+                    </div>
+                </li>
+                <li><a href="Information">Information</a></li>
+                <li class="dropdown">
+                    <a href="Online Services">Online Services
+                        <i class="fa-solid fa-caret-down"></i>
+                    </a>
+                    <div class="drop_content">
+                        <a href="online_assesment">Online Assesment</a>
+                        <a href="patient_access">Patient Access</a>
+                        <a href="appoinment">Book an appointment</a>
+                    </div>
+                </li>
+                <li><a href="Staff">Staff</a></li>
+                <li><a href="Services">Services</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- MAIN CONTENT OF THE PAGE -->
+
+    <main>
+        <div class="main_tag">
+            <h1>WELCOME TO HAVEN HEIGHTS CLINIC</h1>
+            <p>Your health is our priority. Our dedicated team is here to<br> 
+                provide expert care and support for your well-being.</p>
+        </div>
+
+        <!-- At the time given, these buttons on the main page are mostly to highlight design possibilities
+            and do not have a real functionality - it will all be added for an actual submission, content of these
+            is a subject to change following added functonality of the page according to the specification given -->
+
+        <div id="services_box" class="services_box">
+            <a href="test_button">
+                <div class="icon">
+                    <i class="fa-solid fa-stethoscope"></i>
+                </div>Consult With The Clinic Remotely</a>
+            <a href="test_button">
+                <div class="icon">
+                    <i class="fa-solid fa-clipboard"></i>
+                </div>Update Personal Details</a>
+            <a href="test_button">
+                <div class="icon">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </div>News and Updates</a>
+            <a href="https://www.patientaccess.com/">
+                <div class="icon">
+                    <i class="fa-solid fa-laptop"></i>
+                </div>Online Patient Services</a>
+            <a href="test_button">
+                <div class="icon">
+                    <i class="fa-solid fa-prescription-bottle"></i>
+                </div>Prescription Order</a>
+            <a href="test_button">
+                <div class="icon">
+                    <i class="fa-regular fa-folder-open"></i>
+                </div>View Health Records</a>
+            <a href="test_button">
+                <div class="icon">
+                    <i class="fa-regular fa-clock"></i>
+                </div>Opening Times</a>
+            <a href="test_button">
+                <div class="icon">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>Contact The Clinic</a>
+        </div>
+    </main>
+
+<!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer_main"> 
+            <div class="left_footer_box">
+                <div class="tag">
+                    <h1>Site Map</h1>
+                    <a href="#Home">Home</a>
+                    <a href="home">Appointments</a>
+                    <a href="home">Register as a patient</a>
+                    <a href="home">Consultation Online</a>
+                    <a href="home">Update Cookie preferences</a>
+                </div>
+            </div>
+
+            <div class="center_footer_box">
+                <div class="tag">
+                    <h1>Out of hours cover</h1>
+                    <p>Our surgeries are closed from 6.30pm on weekdays,
+                    and all day at weekends and Bank Holidays except for limited extended hours. 
+                    If you need health advice when the surgery is shut please call NHS 111 
+                    who provide out of hours cover. 111 is the NHS non-emergency number. It’s fast, easy and free.<br><br>
+                    Call 111 and speak to a highly trained adviser. 
+                    They will ask you a series of questions to assess your symptoms and immediately 
+                    direct you to the best medical care for you.</p>
+                </div>
+            </div>
+            
+            <div class="right_footer_box">
+                <div class="tag">
+                    <h1>Contact Us</h1>
+                    <p>Haven Heights Clinic
+                        123 Elm Street
+                        London, NW1 1AB
+                        United Kingdom
+                    </p>
+                    <div class="social_links">
+                        <p><i class="fa-solid fa-phone"> 020 3241 2768</i></p>
+                        <!--<a href="phone"><i class="fa-solid fa-phone"></i> 020 3241 2768</a>-->
+                        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                        <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank"><i class="fa-regular fa-envelope"></i> haven.heights@gmail.com</a>
+                    </div>
+                </div>
+
+            </div>   
+        </div>                             
+    </footer>
+</body>
+
+<!-- SCRIPTS -->
+
+<script>
+
+    // function opening an overlay with login form on it through changing its CSS setting of height to 100%
+
+    function openLogin(){
+        document.getElementById("login").style.height = "100%";
+    }
+
+    // function closing an overlay with login through changing its CSS setting of height back to 0%
+
+    function closeLogin(){
+        document.getElementById("login").style.height = "0%";
+    }
+
+    // function opening an overlay with register form on it through changing its CSS setting of height to 100%
+
+    function openRegister(){
+        document.getElementById("register").style.height = "100%";
+    }
+
+    // function closing an overlay with register form through changing its CSS setting of height back to 0%
+
+    function closeRegister(){
+        document.getElementById("register").style.height = "0%";
+    }
+        
+    document.getElementById("register").addEventListener("submit", function(event){
+        event.preventDefault();
+        window.location.href = "#";   
+    })
+</script>

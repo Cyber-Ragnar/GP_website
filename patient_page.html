@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>patient page</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- OUTSIDE STYLE LIBRARY FOR ICONS FROM FONT AWESOME --> 
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.1/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+    <script src="./scripts/patient.js"></script>
+</head>
+
+<body>
+
+<!-- NAVIGATION SECTION WITH LOGOS AND NAVIGATION BAR-->
+
+    <nav>
+        <div class="logo">
+            <img src="images/logos/3.png">
+            <p>HAVEN HEIGHTS CLINIC<br><span>MEDICAL CENTER</span></p>
+        </div>
+
+        <!-- NAVIGATION BAR -->
+
+        <div class="navigation_bar">
+            <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#" id="logoutLink">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<!-- MAIN CONTENT OF THE PAGE -->
+
+    <main>
+        <div class="main_tag">
+            <h1>Welcome 'it-will-display-patient-name-here</h1>
+        </div>
+        <div id="services_box" class="services_box">
+            
+            <a href="#" id="appointments">
+                <div class="icon">
+                    <i class="fa-solid fa-laptop"></i>
+                </div>Book an Appointment</a>
+            <a href="#" id="prescription">
+                <div class="icon">
+                    <i class="fa-solid fa-prescription-bottle"></i>
+                </div>Prescription Order</a>
+            <a href="#" id="records">
+                <div class="icon">
+                    <i class="fa-regular fa-folder-open"></i>
+                </div>View Health Records</a>
+            <a href="#" id="news">
+                <div class="icon">
+                    <i class="fa-solid fa-bullhorn"></i>
+                </div>News and Updates</a>
+            <a href="#" id="opening_times">
+                <div class="icon">
+                    <i class="fa-regular fa-clock"></i>
+                </div>Opening Times</a>
+            <a href="#" id="contact">
+                <div class="icon">
+                    <i class="fa-regular fa-envelope"></i>
+                </div>Contact The Clinic</a>
+        </div> 
+
+        <!-- CONTENT -->
+
+        <div id="news_box" class="info_box">
+            <button id="back_button" class="back_button">BACK</button>
+            <p>News will be added here for the final submission</p>
+        </div>
+        <div id="appointment_box" class="appointment_box">
+            <button id="back_button" class="back_button">BACK</button>
+            <form id="booking_form">
+                <label for="doc_dropdown">Choose a doctor: </label>
+                <select id="doc_dropdown" class="doc_drop"> </select>
+                <label for="app_date">Choose a date: </label>
+                <input type="date" id="app_date" name="app_date" required>
+                <label for="time_slot">Choose time available: </label>
+                <select id="time_slot" required></select><br>
+                <label for="app_notes">Add notes: </label><br>
+                <input type="text" id="app_notes" name="app_notes" required><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div id="prescription_box" class="info_box">
+            <button id="back_button" class="back_button" >BACK</button>
+            <p>Request your prescription here</p>
+            <div class="drug_table_container" id="drug_table_container">
+                <table id="drug_table" class="drug_table">
+                    <th> Medicine Name</th>
+                    <th> Action</th>
+                </table>
+            </div>
+        </div>
+        <div id="records_box" class="info_box">
+            <button id="back_button" class="back_button">BACK</button>
+            <p>Your health records history</p>
+            <div class="records_table_container" id="records_table_container">
+                <table id="records_table" class="records_table">
+                    <tr>
+                        <th>Patient Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Doctor</th>
+                        <th>Record</th>
+                        <th>Record type</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="opening_times_box" class="info_box">
+            <button id="back_button" class="back_button">BACK</button>
+            <p>Opening times info will be added here for the final submission</p>
+        </div>
+        <div id="contact_box" class="info_box">
+            <button id="back_button" class="back_button">BACK</button>
+            <p>Clinic contact details will be added here for the final submission</p>
+        </div>
+    </main>
+
+<!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer_main"> 
+            <div class="left_footer_box">
+                <div class="tag">
+                    <h1>Site Map</h1>
+                    <a href="#Home">Home</a>
+                    <a href="home">Appointments</a>
+                    <a href="home">Register as a patient</a>
+                    <a href="home">Consultation Online</a>
+                    <a href="home">Update Cookie preferences</a>
+                </div>
+            </div>
+
+            <div class="center_footer_box">
+                <div class="tag">
+                    <h1>Out of hours cover</h1>
+                    <p>Our surgeries are closed from 6.30pm on weekdays,
+                    and all day at weekends and Bank Holidays except for limited extended hours. 
+                    If you need health advice when the surgery is shut please call NHS 111 
+                    who provide out of hours cover. 111 is the NHS non-emergency number. It’s fast, easy and free.<br><br>
+                    Call 111 and speak to a highly trained adviser. 
+                    They will ask you a series of questions to assess your symptoms and immediately 
+                    direct you to the best medical care for you.</p>
+                </div>
+            </div>
+            
+            <div class="right_footer_box">
+                <div class="tag">
+                    <h1>Contact Us</h1>
+                    <p>Haven Heights Clinic
+                        123 Elm Street
+                        London, NW1 1AB
+                        United Kingdom
+                    </p>
+                    <div class="social_links">
+                        <p><i class="fa-solid fa-phone"> 020 3241 2768</i></p>
+                        <!--<a href="phone"><i class="fa-solid fa-phone"></i> 020 3241 2768</a>-->
+                        <a href="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                        <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank"><i class="fa-regular fa-envelope"></i> haven.heights@gmail.com</a>
+                    </div>
+                </div>
+
+            </div>   
+        </div>                             
+    </footer>
+</body>
+
+<!-- SCRIPTS -->
+
+<script>
+    
+    // static function changing layout of the grid in my service box upon loading the page
+
+
+</script>
